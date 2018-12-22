@@ -7,7 +7,7 @@ var Summary = require('prom-client').Summary;
 var Gauge = require('prom-client').Gauge;
 
 const collectDefaultMetrics = Prometheus.collectDefaultMetrics;
-collectDefaultMetrics({ prefix: 'hobb_api_' });
+collectDefaultMetrics({ prefix: 'pharmacy_api_' });
 collectDefaultMetrics({ timeout: 5000 });
 
 function clearPath(path) {
@@ -42,7 +42,7 @@ function clearPath(path) {
  * Health metrics for alert monitor
  */
 module.exports.healthGauge = healthGauge = new Gauge({
-    name: 'hobb_health_check',
+    name: 'pharmacy_health_check',
     help: 'Health check API',
     labelNames: ['status', 'apiVersion']
 });
@@ -52,7 +52,7 @@ module.exports.healthGauge = healthGauge = new Gauge({
  * e.g. a GET and a POST call will be counted as 2 different calls
  */
 module.exports.numOfRequests = numOfRequests = new Counter({
-    name: 'hobb_numOfRequests',
+    name: 'pharmacy_numOfRequests',
     help: 'Number of requests made',
     labelNames: ['method', 'path']
 });
@@ -61,13 +61,13 @@ module.exports.numOfRequests = numOfRequests = new Counter({
  * A Prometheus summary to record the HTTP method, path, response code and response time
  */
 module.exports.responses = responses = new Summary({
-    name: 'hobb_responses',
+    name: 'pharmacy_responses',
     help: 'Response time in millis',
     labelNames: ['method', 'path', 'status']
 });
 
 module.exports.responsesError = new Counter({
-    name: 'hobb_responsesError',
+    name: 'pharmacy_responsesError',
     help: 'Response time in millis',
     labelNames: ['method', 'path', 'status', 'message']
 });
