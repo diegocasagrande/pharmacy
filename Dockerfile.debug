@@ -1,0 +1,19 @@
+FROM node:11.2-alpine
+
+WORKDIR /data/
+
+ENV NODE_ENV=development
+
+COPY package.json /data/
+
+RUN npm install && npm install -g nodemon
+
+ENV NODE_PATH=/data/node_modules
+
+ADD /src/ /var/app/src
+
+WORKDIR /var/app/src
+
+EXPOSE 3013
+
+CMD npm run start

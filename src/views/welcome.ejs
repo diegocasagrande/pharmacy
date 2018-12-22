@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Conta de Pagamento da Arquitetura 3.0">
+    <meta name="author" content="Diego Casagrande">
+
+    <title>HOBB - Arquitetura 3.0</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a class="js-scroll-trigger" href="#page-top">Welcome HoBB</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#page-top">Home</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#services">Features and Docs</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">Welcome to HoBB</h1>
+            <h3 class="mb-5">
+                <em>Personal Relationship Account at Banco do Brasil</em>
+            </h3>
+            <a class="btn btn-dark js-scroll-trigger" href="#about">More info</a>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <!-- About -->
+    <section class="content-section bg-light2 vertical-center" id="about">
+        <div class="container text-center my-auto">
+            <p><br><br> </p>
+            <div class="row">
+
+                <div class="col-lg-10 mx-auto">
+                    <h2>This project aims to provide APIs using Architecture 3.0 to create and manage a personal relationship account at Banco do Brasil.</h2>
+                    <p><br><br> </p>
+                    <p class="lead mb-5">The Architecture 3.0 uses the technologies related to microservics, such as: Cloud Technologies, Dev Ops and Agile Methodologies.</p>
+                    <p><br><br> </p>
+                    <a class="btn btn-dark js-scroll-trigger" href="#services">Features and Docs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section class="content-section bg-light2 vertical-center" id="contact">
+        <div class="container text-center my-auto">
+            <div class="row">
+                <div class="col-lg-24 mx-auto">
+                    <h2>Questions, suggestions, critiques and tips</h2>
+                    <p class="lead mb-5">Contact us</p>
+                    <p><br><br> </p>
+                    <div id="form-contatct" class="text-left col-lg-24">
+                        <form id="pesquisa" action="/contact" method="post">
+                            <!-- name form -->
+                            <div class="form-group">
+                                <label for="nameForm">Name</label>
+                                <input type="text" class="form-control" id="nameForm" name="nameForm" placeholder="Full name" required>
+                            </div>
+                            <!-- email form -->
+                            <div class="form-group">
+                                <label for="emailForm">Email address</label>
+                                <input type="email" class="form-control" id="emailForm" name="emailForm" placeholder="name@email.com" required>
+                            </div>
+                            <!-- phone form -->
+                            <div class="form-group">
+                                <label for="phoneForm">Phone</label>
+                                <input type="phone" class="form-control" id="phoneForm" name="phoneForm" placeholder="(61)91122-3344">
+                            </div>
+                            <!-- message text -->
+                            <div class="form-group">
+                                <label for="messageTx">Message</label>
+                                <textarea class="form-control" id="messageTx" name="messageTx" rows="3" placeholder="Questions, suggestions, critiques, tips..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-dark">Submit</button>
+                            </div>
+
+
+                            <% var msgLength = messageSuccess.length %>
+
+                                <% if ((messageSuccess.length > 0)) { %>
+                                    <div class="form-group alert alert-success  alert-dismissible" role="alert" id=success-message>
+                                        <%= messageSuccess %>
+                                    </div>
+                                    <% } %>
+                                        <% if ((messageError.length > 0)) { %>
+                                            <div class="form-group alert alert-danger alert-dismissible " role="alert" id=success-message>
+                                                <%= messageError %>
+                                            </div>
+                                            <% } %>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.container -->
+
+
+
+    <!-- Footer -->
+    <footer class="footer text-center ">
+        <div class="container ">
+            <p class="text-muted small mb-0 ">HOBB 2018</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger " href="#page-top ">
+        <i class="fas fa-angle-up "></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js "></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js "></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js "></script>
+
+
+
+</body>
+
+<script>
+    window.onload = function() {
+        if (<%=msgLength%> > 0) {
+            location.href = "#contact";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+version: '3.5'
+
+services:
+
+###############################################################################
+# API - Node Application
+###############################################################################
+  app-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.debug
+    image: 
+      diegocasagrande/app-test:latest
+    container_name: app-test
+    command: nodemon -L --inspect=0.0.0.0:5858 /var/app/src/api.js
+    ports:
+      - '3013:3013'
+      - '5858:5858'
+    volumes:
+      - ./src/:/var/app/src/
+    environment:
+      - API_PORT=3443
+      - API_HOST=localhost:3443
+      - API_PROTOCOL=http
+      - API_VERSION=0.1.0-beta
+      - MONGO_URL=mongodb://app-db:27017/app
+      - MONGO_USER=admin
+      - MONGO_PWD=admin
+
+
+###############################################################################
+# Networks config
+###############################################################################
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.169.5.0/24
+
+###############################################################################
+# Volumes
+###############################################################################
+# to remove all: docker volume rm $(docker volume ls -q)
+volumes:
+  mongo_data:
+  test:

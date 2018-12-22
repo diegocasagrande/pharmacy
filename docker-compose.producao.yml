@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+
+###############################################################################
+# API - Node Application
+###############################################################################
+  app-farm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 
+      diegocasagrande/app-farm:latest
+    ports:
+      - '3013:3013'
+    environment:
+      - API_PORT=3013
+      - API_VERSION=0.1.0-beta
+      - MONGO_URL=mongodb://app-db:27017/app
+      - MONGO_USER=admin
+      - MONGO_PWD=admin
+
