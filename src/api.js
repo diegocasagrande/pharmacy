@@ -11,7 +11,7 @@ var info = require('./controllers/infoController');
 
  
 
-console.log('\nIniciando HOBB Api...  \n');
+console.log('\nIniciando Pharmacy Api...  \n');
 console.log('---   Variaveis consideradas  ---');
 console.log('API_PORT  . . . . . . .: ' + Config.Env.server.port);
 console.log('API_VERSION  .  . . . .: ' + Config.Env.server.version);

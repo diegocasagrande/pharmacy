@@ -20,8 +20,6 @@ services:
       - ./src/:/var/app/src/
     environment:
       - API_PORT=3443
-      - API_HOST=localhost:3443
-      - API_PROTOCOL=http
       - API_VERSION=0.1.0-beta
       - MONGO_URL=mongodb://app-db:27017/app
       - MONGO_USER=admin

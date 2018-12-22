@@ -64,7 +64,7 @@ exports.health = async function(req, res, next) {
 
 
         return res.status(statusCodeUp).json({
-            name: "Projeto HOBB",
+            name: "Projeto Farmacia Mila",
             version: Config.Env.server.version,
             dbConnectionStatus: dbConnectionUp,
             externalClientService: gtwClientUp
@@ -95,27 +95,11 @@ exports.contact = async function(req, res, next) {
         await botMessage(req.body);
 
         res.render("welcome", {
-            urlHobbApp: Config.Env.hobb.app,
-            urlDoc: Config.Env.server.protocol + "://" + Config.Env.server.host + "/api-docs",
-            urlMonitor: Config.Env.hobb.monitor,
-            urlPrometheus: Config.Env.hobb.prometheus,
-            urlHealth: Config.Env.server.protocol + "://" + Config.Env.server.host + "/health",
-            urlInfo: Config.Env.server.protocol + "://" + Config.Env.server.host + "/info",
-            urlMetrics: Config.Env.server.protocol + "://" + Config.Env.server.host + "/metrics",
-            urlErrors: Config.Env.server.protocol + "://" + Config.Env.server.host + "/errors",
             messageSuccess: "Message sent by success!",
             messageError: ""
         });
     } catch (e) {
         res.render("welcome", {
-            urlHobbApp: Config.Env.hobb.app,
-            urlDoc: Config.Env.server.protocol + "://" + Config.Env.server.host + "/api-docs",
-            urlMonitor: Config.Env.hobb.monitor,
-            urlPrometheus: Config.Env.hobb.prometheus,
-            urlHealth: Config.Env.server.protocol + "://" + Config.Env.server.host + "/health",
-            urlInfo: Config.Env.server.protocol + "://" + Config.Env.server.host + "/info",
-            urlMetrics: Config.Env.server.protocol + "://" + Config.Env.server.host + "/metrics",
-            urlErrors: Config.Env.server.protocol + "://" + Config.Env.server.host + "/errors",
             messageSuccess: "",
             messageError: "Could not send the telegram, try again soon!"
         });
@@ -148,13 +132,10 @@ function getMessage() {
 };
 
 async function botMessage(req) {
-    // Teste
-    // token: '751207015:AAGtPUk99_uYWJ6V-B5lZ_aJKyTxnP40Ye0',
-    // chat_id: "-1001385371194",
 
     try {
         var bot = new telegram({
-            token: '645003114:AAH2XM8v8Xgc4vNxIWsTcpNUnrxLb2ZVFXk',
+            token: '751207015:AAGtPUk99_uYWJ6V-B5lZ_aJKyTxnP40Ye0',
             // polling: { timeout: 5000, interval: 0 }
         });
 
@@ -167,11 +148,11 @@ async function botMessage(req) {
         //     });
 
         bot.sendMessage({
-            chat_id: "-1001347189218",
-            text: "HOBB - Contact from API!\n\n (" + Config.Env.server.host + ")" +
+            chat_id: "-1001385371194",
+            text: "Pharmacy - Contact from API!\n\n (" + Config.Env.server.host + ")" +
                 "\n" + "Name: " + req.nameForm +
                 "\n" + "Email: " + req.emailForm +
-                "\n" + "PhoneForm: " + req.phoneForm +
+                "\n" + "Phone: " + req.phoneForm +
                 "\n" + "Text: " + req.messageTx
         });
 
