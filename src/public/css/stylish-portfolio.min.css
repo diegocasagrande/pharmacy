@@ -12,7 +12,7 @@ html {
 
 body {
     font-family: 'Source Sans Pro';
-    color: #0b5ea8
+    color: #499747
 }
 
 .bg-light2 {
@@ -107,11 +107,10 @@ h6 {
     height: auto;
     padding-top: 8rem;
     padding-bottom: 8rem;
-    background: url(../img/fundoBB_2.png);
-    /* background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, .1)), to(rgba(255, 255, 255, .1))), url(../img/fundoBB_2.png);  */
-    /* background: linear-gradient(90deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, .1) 100%), url(../img/fundoBB_2.png); */
-    */
-    /* background-position: center center; */
+    background: url(../img/logo.png);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, .1)), to(rgba(255, 255, 255, .1))), url(../img/logo.png); 
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, .1) 100%), url(../img/logo.png);
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover
 }
@@ -378,8 +377,8 @@ a:hover {
 
 .btn-dark {
     color: #fff !important;
-    background-color: #9d9d9d;
-    border-color: #9d9d9d
+    background-color: #499747;
+    border-color: #499747
 }
 
 .btn {

@@ -149,11 +149,11 @@ async function botMessage(req) {
 
         bot.sendMessage({
             chat_id: "-1001385371194",
-            text: "Pharmacy - Contact from API!\n\n (" + Config.Env.server.host + ")" +
-                "\n" + "Name: " + req.nameForm +
+            text: "Farmácia Mila: Contato do Site!\n\n (" + Config.Env.server.host + ")" +
+                "\n" + "Nome: " + req.nameForm +
                 "\n" + "Email: " + req.emailForm +
-                "\n" + "Phone: " + req.phoneForm +
-                "\n" + "Text: " + req.messageTx
+                "\n" + "Telefone: " + req.phoneForm +
+                "\n" + "Mensagem: " + req.messageTx
         });
 
 

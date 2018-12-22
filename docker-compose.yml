@@ -19,7 +19,7 @@ services:
     volumes:
       - ./src/:/var/app/src/
     environment:
-      - API_PORT=3443
+      - API_PORT=3013
       - API_VERSION=0.1.0-beta
       - MONGO_URL=mongodb://app-db:27017/app
       - MONGO_USER=admin

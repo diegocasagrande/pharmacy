@@ -29,85 +29,76 @@
     </a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a class="js-scroll-trigger" href="#page-top">Sobre</a>
-            </li>
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="#page-top">Home</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#services">Features and Docs</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#contact">Contact</a>
+                <a class="js-scroll-trigger" href="#contact">Contato</a>
             </li>
         </ul>
     </nav>
 
     <!-- Header -->
     <header class="masthead d-flex">
-        <div class="container text-center my-auto">
-            <h1 class="mb-1">Welcome to Mila</h1>
-            <h3 class="mb-5">
-                <em>Personal Relationship Account at Banco do Brasil</em>
-            </h3>
-            <a class="btn btn-dark js-scroll-trigger" href="#about">More info</a>
+        <div class="container text-center">
+                <div class="container">
+                        <div class="row">
+                          <div class="col-sm">
+                                <h2 class="mb-12">Bem vindo</h1>
+                                <h3 class="mb-5">
+                                    <em>Mila Farmácia de Manipulação</em>
+                                </h3>
+                          </div>
+                          <div class="col-sm">
+                             
+                          </div>
+                        </div>
+                        <div class="row">      <div class="col-sm">
+                                <a class="btn btn-dark js-scroll-trigger" href="#contact">Orçamento</a>
+                            </div> 
+                            <div class="col-sm">
+                             
+                                </div>
+                        </div>
+                      </div>
+
+            
         </div>
         <div class="overlay"></div>
     </header>
-
-    <!-- About -->
-    <section class="content-section bg-light2 vertical-center" id="about">
-        <div class="container text-center my-auto">
-            <p><br><br> </p>
-            <div class="row">
-
-                <div class="col-lg-10 mx-auto">
-                    <h2>This project aims to provide APIs using Architecture 3.0 to create and manage a personal relationship account at Banco do Brasil.</h2>
-                    <p><br><br> </p>
-                    <p class="lead mb-5">The Architecture 3.0 uses the technologies related to microservics, such as: Cloud Technologies, Dev Ops and Agile Methodologies.</p>
-                    <p><br><br> </p>
-                    <a class="btn btn-dark js-scroll-trigger" href="#services">Features and Docs</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- contact -->
     <section class="content-section bg-light2 vertical-center" id="contact">
         <div class="container text-center my-auto">
             <div class="row">
                 <div class="col-lg-24 mx-auto">
-                    <h2>Questions, suggestions, critiques and tips</h2>
-                    <p class="lead mb-5">Contact us</p>
+                    <h2>Orçamentos, dúvidas e dicas da Mila</h2>
+                    <p class="lead mb-5">Contamos com sua mensagem!</p>
                     <p><br><br> </p>
                     <div id="form-contatct" class="text-left col-lg-24">
                         <form id="pesquisa" action="/contact" method="post">
                             <!-- name form -->
                             <div class="form-group">
-                                <label for="nameForm">Name</label>
-                                <input type="text" class="form-control" id="nameForm" name="nameForm" placeholder="Full name" required>
+                                <label for="nameForm">Nome</label>
+                                <input type="text" class="form-control" id="nameForm" name="nameForm" placeholder="Nome completo" required>
                             </div>
                             <!-- email form -->
                             <div class="form-group">
-                                <label for="emailForm">Email address</label>
-                                <input type="email" class="form-control" id="emailForm" name="emailForm" placeholder="name@email.com" required>
+                                <label for="emailForm">Endereço de email (opcional)</label>
+                                <input type="email" class="form-control" id="emailForm" name="emailForm" placeholder="nome@email.com" >
                             </div>
                             <!-- phone form -->
                             <div class="form-group">
-                                <label for="phoneForm">Phone</label>
-                                <input type="phone" class="form-control" id="phoneForm" name="phoneForm" placeholder="(61)91122-3344">
+                                <label for="phoneForm">Telefone</label>
+                                <input type="phone" class="form-control" id="phoneForm" name="phoneForm" placeholder="(48)91122-3344" required>
                             </div>
                             <!-- message text -->
                             <div class="form-group">
-                                <label for="messageTx">Message</label>
-                                <textarea class="form-control" id="messageTx" name="messageTx" rows="3" placeholder="Questions, suggestions, critiques, tips..." required></textarea>
+                                <label for="messageTx">Messagem</label>
+                                <textarea class="form-control" id="messageTx" name="messageTx" rows="3" placeholder="Orçamentos, dúvidas, críticas, sugestões..." required></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-dark">Submit</button>
+                                <button type="submit" class="btn btn-dark">Enviar</button>
                             </div>
 
 
