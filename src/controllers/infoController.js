@@ -95,13 +95,13 @@ exports.contact = async function(req, res, next) {
         await botMessage(req.body);
 
         res.render("welcome", {
-            messageSuccess: "Message sent by success!",
+            messageSuccess: "Mensagem recebida! Obrigado!",
             messageError: ""
         });
     } catch (e) {
         res.render("welcome", {
             messageSuccess: "",
-            messageError: "Could not send the telegram, try again soon!"
+            messageError: "Nossa! Descupe-nos! Tivemos problemas! \nPor favor, nos contate pelo fone (48)9 9 9833 3505."
         });
     };
 }
