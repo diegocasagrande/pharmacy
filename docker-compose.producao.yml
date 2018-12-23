@@ -1,16 +1,10 @@
 version: '3.5'
 
 services:
-
-###############################################################################
-# API - Node Application
-###############################################################################
   app-farm:
     build:
       context: .
       dockerfile: Dockerfile
-    image: 
-      diegocasagrande/app-farm:latest
     ports:
       - '3013:3013'
     environment:
@@ -19,4 +13,16 @@ services:
       - MONGO_URL=mongodb://app-db:27017/app
       - MONGO_USER=admin
       - MONGO_PWD=admin
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:www.farmaciamila.com.br"
+
+  reverse-proxy:
+    image: traefik
+    command: --api --docker.exposedbydefault=false
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 

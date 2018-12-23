@@ -6,3 +6,5 @@ coverage
 .vscode
 .nyc_output
 .eslintrc.json
+/local-others/*
+
